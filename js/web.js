@@ -8,12 +8,26 @@ $(window).on('load', (() => {
 }));
 
 function begin(data) {
-    console.log(data);
+    let ContactCardModel = Backbone.Model.extend({
+        defaults: {
+            message: "Hello World"
+        }
+    });
+    let ContactCardView = Backbone.View.extend({
+        el: '#contact-cards',
+        render: function() {
+            this.$el.html(this.model.get('message'));
+            return this;
+        }
+    });
+    new ContactCardView({
+        model: new ContactCardModel({})
+    }).render();
 };
 
-function error (message) {
-    new window.ErrorMessageView ({
-        model: new window.ErrorMessageModel ({
+function error(message) {
+    new window.ErrorMessageView({
+        model: new window.ErrorMessageModel({
             message: message
         })
     }).render();

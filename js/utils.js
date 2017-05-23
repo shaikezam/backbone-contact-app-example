@@ -1,5 +1,5 @@
 window.ErrorMessageModel = Backbone.Model.extend({
-    default: {
+    defaults: {
         message: 'Some error occurred, please try again'
     }
 });
