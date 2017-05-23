@@ -1,0 +1,28 @@
+body {
+    background-color: #343438;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 1%;
+    margin-bottom: 15%;
+    color: white;
+    font-family: "consolas", Georgia, Serif;
+    font-size:medium;
+}
+
+#default-contact {
+    width: 10%;
+}
+
+.contact-card {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 20px;
+    padding: 1%;
+    margin-bottom: 1%;
+    background-color: #f5f5f3;
+}
+
+.new-contact {
+    width: 20%;
+}

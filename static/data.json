@@ -1,0 +1,54 @@
+    {
+        "CEO": {
+            "id": "0001",
+            "name": "John Brown",
+            "photo": ""
+        },
+        "managers": [{
+            "id": "0002",
+            "name": "Jack White",
+            "photo": "",
+            "managerID": "0001"
+        }, {
+            "id": "0003",
+            "name": "Bill Blue",
+            "photo": "",
+            "managerID": "0001"
+        }, {
+            "id": "0004",
+            "name": "Becky Green",
+            "photo": "",
+            "managerID": "0001"
+        }],
+        "regularEmployees": [{
+            "id": "0004",
+            "name": "Matt Black",
+            "photo": "",
+            "managerID": "0002"
+        }, {
+            "id": "0005",
+            "name": "Bob Pink",
+            "photo": "",
+            "managerID": "0002"
+        }, {
+            "id": "0006",
+            "name": "Jin Purple",
+            "photo": "",
+            "managerID": "0003"
+        }, {
+            "id": "0007",
+            "name": "Kim Aqua",
+            "photo": "",
+            "managerID": "0003"
+        }, {
+            "id": "0008",
+            "name": "Jim Coral",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "0009",
+            "name": "Marcos Cyan ",
+            "photo": "",
+            "managerID": "0004"
+        }]
+    }
