@@ -17,7 +17,8 @@ function begin(data) {
     _.each(data['CEO'], function(ceo) {
         ceoCollection.add(new CEOCardModel({
             id: ceo.id,
-            name: ceo.name
+            name: ceo.name,
+            photo: ceo.photo
         }));
         let x = new CEOCardView({
             model: ceoCollection.at(0)
@@ -29,7 +30,8 @@ function begin(data) {
         managerCollection.add(new ManagerCardModel({
             id: manager.id,
             name: manager.name,
-            managerID: manager.managerID
+            managerID: manager.managerID,
+            photo: manager.photo
         }));
         let x = new ManagerCardView({
             model: managerCollection.at(managerCollection.length - 1)
@@ -41,7 +43,8 @@ function begin(data) {
         regularEmployeesCollection.add(new EmployeeCardModel({
             id: regularEmployee.id,
             name: regularEmployee.name,
-            managerID: regularEmployee.managerID
+            managerID: regularEmployee.managerID,
+            photo: regularEmployee.photo
         }));
         let x = new EmployeeCardView({
             model: regularEmployeesCollection.at(regularEmployeesCollection.length - 1)

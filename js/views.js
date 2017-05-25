@@ -23,9 +23,9 @@
             }
         },
         attachData: function() {
-            this.$el.prepend('<span>' + 'Employee Position: ' + this.model.get('position') + '</span>');
-            this.$el.prepend('<span>' + 'Employee Name: ' + this.model.get('name') + '</span><br>');
-            this.$el.prepend('<span>' + 'Employee ID: ' + this.model.get('id') + '</span><br>');
+            this.$el.prepend('<span>' + 'Position: ' + this.model.get('position') + '</span>');
+            this.$el.prepend('<span>' + 'Name: ' + this.model.get('name') + '</span><br>');
+            this.$el.prepend('<span>' + 'ID: ' + this.model.get('id') + '</span><br>');
         },
         attachPhoto: function() {
             this.$el.prepend('<img class="contact-img" src=' + this.model.get('photo') + ' />')
