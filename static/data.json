@@ -1,9 +1,9 @@
     {
-        "CEO": {
+        "CEO": [{
             "id": "0001",
             "name": "John Brown",
             "photo": "./assets/contact.svg"
-        },
+        }],
         "managers": [{
             "id": "0002",
             "name": "Jack White",
@@ -47,7 +47,7 @@
             "managerID": "0004"
         }, {
             "id": "0009",
-            "name": "Marcos Cyan ",
+            "name": "Marcos Cyan",
             "photo": "",
             "managerID": "0004"
         }]
