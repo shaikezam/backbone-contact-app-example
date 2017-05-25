@@ -3,26 +3,78 @@ body {
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 1%;
-    margin-bottom: 15%;
+    margin-bottom: 1%;
     color: white;
     font-family: "consolas", Georgia, Serif;
-    font-size:medium;
+    font-size: medium;
 }
+
+.navbar-default {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+    color: black;
+    background-color: floralwhite;
+}
+
+.github-icon {
+    width: 25%;
+}
+
+.nav navbar-nav navbar-right {
+    float: right !important;
+}
+
+.search {
+    width: 30%;
+}
+.anchor:hover {
+    text-decoration: underline;
+}
+.form-control {}
 
 #default-contact {
     width: 10%;
 }
-
+h3 {
+    margin-left: 1%;
+}
+big {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.input-group {
+    margin: 1%;
+    width: 300px;
+}
 .contact-card {
     border-style: solid;
     border-color: black;
     border-width: 1px;
     border-radius: 20px;
+    color: black;
+    width: 350px;
     padding: 1%;
-    margin-bottom: 1%;
+    margin: 1%;
+    text-align: left;
     background-color: #f5f5f3;
+    display: inline-block;
 }
 
-.new-contact {
+.contact-card:hover {
+    background-color: cornsilk;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.ceo-contact-img {
+    float: right;
     width: 20%;
+}
+
+.manager-contact-img {
+    float: right;
+    width: 20%;
+    padding-top: 12px;
 }

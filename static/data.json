@@ -2,7 +2,7 @@
         "CEO": {
             "id": "0001",
             "name": "John Brown",
-            "photo": ""
+            "photo": "./assets/contact.svg"
         },
         "managers": [{
             "id": "0002",

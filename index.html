@@ -13,14 +13,57 @@
     <script src="./lib/bootstrap.min.js"></script>
     <script src="./lib/underscore-min.js"></script>
     <script src="./lib/backbone-min.js"></script>
-    
+
     <script src="./js/utils.js"></script>
     <script src="./js/web.js"></script>
 
     <!-- css -->
     <link rel="stylesheet" href="./style/bootstrap.min.css">
     <link rel="stylesheet" href="./style/style.css">
-    <div id="contact-cards"></div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><big>CCIS::Company Contact Info System</big>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand anchor" href="https://www.w3schools.com">Employees</a>
+                <a class="navbar-brand anchor" href="https://www.w3schools.com">New Employee</a>
+                <a class="navbar-brand anchor" href="https://www.w3schools.com">Update Employee</a>
+                <a class="navbar-brand anchor" href="https://www.w3schools.com">About</a>
+                <div class="col-sm-3 col-md-3">
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Go to...<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li align="center">
+                                <a target="_blank" href="https://github.com/shaikezam/backbone-contact-app-example">
+                                    <img class="github-icon" alt="visit my project" src="./assets/github.svg">
+                                </a>
+                            </li>
+                            <li align="center">
+                                <a target="_blank" href="https://www.linkedin.com/in/shay-zambrovski-112505a5/">
+                                    <img alt="visit my linkdin profile" src="./assets/linkedin.svg">
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+    <div class="input-group">
+        <input id="search-employees" type="text" class="form-control" placeholder="Search employee by name">
+        <div class="input-group-btn">
+            <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+    <div id="ceo-contact-card">
+        <h3>CEO</h3></div>
+    <div id="manager-contact-cards">
+        <h3>Managers</h3></div>
+    <div id="regular-contact-cards">
+        <h3>Employees</h3></div>
     <div id="error-messages"></div>
 </body>
 
