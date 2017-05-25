@@ -47,7 +47,6 @@ function begin(data) {
             model: regularEmployeesCollection.at(regularEmployeesCollection.length - 1)
         }).render();
         aContacts.push(x);
-        console.log(regularEmployeesCollection);
     });
 
     $('#search-employees').on('input', function(oEvent) {
