@@ -16,38 +16,133 @@
             "managerID": "0001"
         }, {
             "id": "0004",
+            "name": "Hop Price",
+            "photo": "",
+            "managerID": "0001"
+        }, {
+            "id": "0005",
             "name": "Becky Green",
+            "photo": "",
+            "managerID": "0001"
+        }, {
+            "id": "0006",
+            "name": "Dominic Mendoza",
+            "photo": "",
+            "managerID": "0001"
+        }, {
+            "id": "0007",
+            "name": "Ciaran Baxter",
             "photo": "",
             "managerID": "0001"
         }],
         "regularEmployees": [{
-            "id": "0004",
+            "id": "0008",
             "name": "Matt Black",
             "photo": "",
             "managerID": "0002"
         }, {
-            "id": "0005",
+            "id": "0009",
             "name": "Bob Pink",
             "photo": "",
             "managerID": "0002"
         }, {
-            "id": "0006",
+            "id": "00010",
             "name": "Jin Purple",
             "photo": "",
             "managerID": "0003"
         }, {
-            "id": "0007",
+            "id": "00011",
             "name": "Kim Aqua",
             "photo": "",
             "managerID": "0003"
         }, {
-            "id": "0008",
+            "id": "00012",
             "name": "Jim Coral",
             "photo": "",
             "managerID": "0004"
         }, {
-            "id": "0009",
+            "id": "00013",
             "name": "Marcos Cyan",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00014",
+            "name": "Macon Huffman",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00015",
+            "name": "Burton Rich",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00016",
+            "name": "Aaron Grant",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00017",
+            "name": "Clayton Morales",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00018",
+            "name": "Chadwick Stokes",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00019",
+            "name": "Josiah Watts",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00020",
+            "name": "Ira Shepard",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00021",
+            "name": "Garrett Castaneda",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00022",
+            "name": "Garrett Ball",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00023",
+            "name": "Kelly Noble",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00024",
+            "name": "Reece Mcknight",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00025",
+            "name": "Thor Mcmahon",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00027",
+            "name": "Brennan Frederick",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00029",
+            "name": "Kennedy Foley",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00029",
+            "name": "Adrian Britt",
+            "photo": "",
+            "managerID": "0004"
+        }, {
+            "id": "00030",
+            "name": "Clarke Reyes",
             "photo": "",
             "managerID": "0004"
         }]
