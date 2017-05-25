@@ -1,7 +1,7 @@
 body {
     background-color: #343438;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
     margin-top: 1%;
     margin-bottom: 1%;
     color: white;
@@ -14,6 +14,7 @@ body {
     border-color: black;
     border-width: 1px;
     border-radius: 10px;
+    padding: 10px;
     color: black;
     background-color: floralwhite;
 }
@@ -66,7 +67,7 @@ big {
     border-width: 1px;
     border-radius: 20px;
     color: black;
-    width: 300px;
+    width: 400px;
     padding: 1%;
     margin: 1%;
     text-align: left;
