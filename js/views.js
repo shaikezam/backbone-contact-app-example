@@ -6,7 +6,7 @@
             this.model.bind('change', this.render);
         },
         template: function() {
-            return '<span>Position: <%= position %></span><br><span>Name: <%= name %></span><br><span>ID: <%= id %></span><br>';
+            return '<span>Position: <%= position %></span><br><span>Name: <%= name %></span><br><span>eMail: <%= email %></span><br><span>ID: <%= id %></span><br>';
         },
         render: function() {
             this.attachData();
@@ -43,16 +43,18 @@
         showDetails: function() {
             $('#updated-employee-id').val(this.model.get('id'));
             $('#updated-employee-name').val(this.model.get('name'));
+            $('#updated-employee-email').val(this.model.get('email'));
             $('#updated-employee-position').val(this.model.get('position'));
             $('#update-employee-modal').modal('show');
             $('#submit-update-employee').on('click', function(oEvent) {
                 let updatedName = $('#updated-employee-name').val();
-                this.updateEmployee(updatedName, oEvent);
+                let updatedEmail = $('#updated-employee-email').val();
+                this.updateEmployee(updatedName, updatedEmail, oEvent);
             }.bind(this));
         },
-        updateEmployee: function(updatedName, oEvent) {
+        updateEmployee: function(updatedName, updatedEmail, oEvent) {
             $('#submit-update-employee').off('click');
-            this.model.set({'name': updatedName});
+            this.model.set({'name': updatedName, 'email': updatedEmail});
         }
     });
 

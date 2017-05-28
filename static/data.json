@@ -2,143 +2,171 @@
         "CEO": [{
             "id": "1",
             "name": "John Brown",
-            "photo": "./assets/male11.jpg"
+            "photo": "./assets/male11.jpg",
+            "email": "jbrown@ccis.org"
         }],
         "managers": [{
             "id": "2",
             "name": "Jack White",
             "photo": "./assets/male1.jpg",
-            "managerID": "1"
+            "managerID": "1",
+            "email": "jwhite@ccis.org"
         }, {
             "id": "3",
             "name": "Bill Blue",
             "photo": "./assets/male2.jpg",
-            "managerID": "1"
+            "managerID": "1",
+            "email": "bblue@ccis.org"
         }, {
             "id": "4",
             "name": "Hop Price",
             "photo": "./assets/female2.jpg",
-            "managerID": "1"
+            "managerID": "1",
+            "email": "hprince@ccis.org"
         }, {
             "id": "5",
             "name": "Becky Green",
             "photo": "./assets/female1.jpg",
-            "managerID": "1"
+            "managerID": "1",
+            "email": "bgreen@ccis.org"
         }, {
             "id": "6",
             "name": "Dominic Mendoza",
             "photo": "./assets/male3.jpg",
-            "managerID": "1"
+            "managerID": "1",
+            "email": "dmendoza@ccis.org"
         }, {
             "id": "7",
             "name": "Ciaran Baxter",
             "photo": "./assets/female3.jpg",
-            "managerID": "1"
+            "managerID": "1",
+            "email": "cbaxter@ccis.org"
         }],
         "regularEmployees": [{
             "id": "8",
             "name": "Matt Black",
             "photo": "./assets/male10.jpg",
-            "managerID": "2"
+            "managerID": "2",
+            "email": "mblack@ccis.org"
         }, {
             "id": "9",
             "name": "Bob Pink",
             "photo": "./assets/male12.jpg",
-            "managerID": "2"
+            "managerID": "2",
+            "email": "bpink@ccis.org"
         }, {
             "id": "10",
             "name": "Jin Purple",
             "photo": "./assets/female4.jpg",
-            "managerID": "3"
+            "managerID": "3",
+            "email": "jpurple@ccis.org"
         }, {
             "id": "11",
             "name": "Kim Aqua",
             "photo": "./assets/female5.jpg",
-            "managerID": "3"
+            "managerID": "3",
+            "email": "kaqua@ccis.org"
         }, {
             "id": "12",
             "name": "Jim Coral",
             "photo": "./assets/male5.jpg",
-            "managerID": "2"
+            "managerID": "2",
+            "email": "jcoral@ccis.org"
         }, {
             "id": "13",
             "name": "Ann Cyan",
             "photo": "./assets/female10.jpg",
-            "managerID": "4"
+            "managerID": "4",
+            "email": "acyan@ccis.org"
         }, {
             "id": "14",
             "name": "Jina Huffman",
             "photo": "./assets/female11.jpg",
-            "managerID": "4"
+            "managerID": "4",
+            "email": "jhuffman@ccis.org"
         }, {
             "id": "15",
             "name": "Burton Rich",
             "photo": "./assets/male4.jpg",
-            "managerID": "3"
+            "managerID": "3",
+            "email": "brich@ccis.org"
         }, {
             "id": "16",
             "name": "Aaron Grant",
             "photo": "./assets/male6.jpg",
-            "managerID": "4"
+            "managerID": "4",
+            "email": "agrant@ccis.org"
         }, {
             "id": "17",
             "name": "Clayton Morales",
             "photo": "./assets/contact.svg",
-            "managerID": "4"
+            "managerID": "4",
+            "email": "cmorales@ccis.org"
         }, {
             "id": "18",
             "name": "Chadwick Stokes",
             "photo": "./assets/contact.svg",
-            "managerID": "2"
+            "managerID": "2",
+            "email": "cstokes@ccis.org"
         }, {
             "id": "19",
             "name": "Josiah Watts",
             "photo": "./assets/female12.jpg",
-            "managerID": "4"
+            "managerID": "4",
+            "email": "jwatts@ccis.org"
         }, {
             "id": "20",
             "name": "Ira Shepard",
             "photo": "./assets/female6.jpg",
-            "managerID": "3"
+            "managerID": "3",
+            "email": "ishepard@ccis.org"
         }, {
             "id": "21",
             "name": "Garrett Castaneda",
             "photo": "./assets/male7.jpg",
-            "managerID": "3"
+            "managerID": "3",
+            "email": "gcastaneda@ccis.org"
         }, {
             "id": "00022",
             "name": "Garrett Ball",
             "photo": "./assets/contact.svg",
-            "managerID": "4"
+            "managerID": "4",
+            "email": "gball@ccis.org"
         }, {
             "id": "23",
             "name": "Kelly Noble",
             "photo": "./assets/female7.jpg",
-            "managerID": "2"
+            "managerID": "2",
+            "email": "knoble@ccis.org"
         }, {
             "id": "24",
             "name": "Reece Mcknight",
             "photo": "./assets/female8.jpg",
-            "managerID": "2"
+            "managerID": "2",
+            "email": "rmcknight@ccis.org"
         }, {
             "id": "25",
             "name": "Thor Mcmahon",
             "photo": "./assets/male8.jpg",
-            "managerID": "3"
+            "managerID": "3",
+            "email": "tmcmahob@ccis.org"
         }, {
             "id": "26",
             "name": "Brennan Frederick",
             "photo": "./assets/contact.svg",
-            "managerID": "4"
+            "managerID": "4",
+            "email": "bfrederick@ccis.org"
         }, {
             "id": "27",
             "name": "Kennedy Foley",
             "photo": "./assets/female9.jpg",
-            "managerID": "2"
+            "managerID": "2",
+            "email": "kfoley@ccis.org"
         }, {
             "id": "28",
             "name": "Clarke Reyes",
             "photo": "./assets/male9.jpg",
-            "managerID": "3"
+            "managerID": "3",
+            "email": "creyes@ccis.org"
         }]
     }

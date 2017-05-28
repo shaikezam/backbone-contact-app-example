@@ -3,7 +3,15 @@ let CEOCardModel = Backbone.Model.extend({
         id: '',
         name: '',
         photo: './assets/contact.svg',
-        position: 'CEO'
+        position: 'CEO',
+        email: ''
+    },
+    validate: function (attrs) {
+        if (!attrs.email) {
+            return "Please enter employee email address!"
+        } if (!attrs.name) {
+            return "Please enter employee name!"
+        }
     }
 });
 

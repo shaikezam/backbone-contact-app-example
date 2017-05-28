@@ -16,12 +16,13 @@ function begin(data) {
 
     let aContacts = [];
     let x;
-    
+
     _.each(data['CEO'], function(ceo) {
         ceoCollection.add(new CEOCardModel({
             id: ceo.id,
             name: ceo.name,
-            photo: ceo.photo
+            photo: ceo.photo,
+            email: ceo.email
         }));
     });
     ceoCollection.each(function(ceoModel) {
@@ -35,7 +36,8 @@ function begin(data) {
             id: manager.id,
             name: manager.name,
             managerID: manager.managerID,
-            photo: manager.photo
+            photo: manager.photo,
+            email: manager.email
         }));
     });
     managerCollection.each(function(managerModel) {
@@ -49,7 +51,8 @@ function begin(data) {
             id: regularEmployee.id,
             name: regularEmployee.name,
             managerID: regularEmployee.managerID,
-            photo: regularEmployee.photo
+            photo: regularEmployee.photo,
+            email: regularEmployee.email
         }));
     });
     regularEmployeesCollection.each(function(regularEmployeeModel) {
@@ -77,6 +80,8 @@ function begin(data) {
         $('#new-employee-name').val("");
         let newEmployeePostion = $('#new-employee-postion').val();
         $('#new-employee-postion').val("Employee");
+        let newEmployeeEmail = $('#new-employee-email').val();
+        $('#new-employee-email').val("");
         if (!(newEmployeeName && newEmployeePostion)) {
             errorHandling.renderError(errorHandling.allFields);
             return;
@@ -86,7 +91,8 @@ function begin(data) {
         let newEmployee = {
             name: newEmployeeName,
             id: aContacts.length + 1,
-            managerID: 'TBD'
+            managerID: 'TBD',
+            email: newEmployeeEmail
         };
         let x;
         switch (newEmployeePostion) {
@@ -94,7 +100,8 @@ function begin(data) {
                 data['CEO'].push(newEmployee);
                 ceoCollection.add(new CEOCardModel({
                     id: newEmployee.id,
-                    name: newEmployee.name
+                    name: newEmployee.name,
+                    email: newEmployeeEmail
                 }));
                 x = new CEOCardView({
                     model: ceoCollection.at(ceoCollection.length - 1)
@@ -106,7 +113,8 @@ function begin(data) {
                     id: newEmployee.id,
                     name: newEmployee.name,
                     managerID: newEmployee.managerID,
-                    photo: newEmployee.photo
+                    photo: newEmployee.photo,
+                    email: newEmployee
                 }));
                 x = new ManagerCardView({
                     model: managerCollection.at(managerCollection.length - 1)
@@ -117,7 +125,8 @@ function begin(data) {
                     id: newEmployee.id,
                     name: newEmployee.name,
                     managerID: newEmployee.managerID,
-                    photo: newEmployee.photo
+                    photo: newEmployee.photo,
+                    email: newEmployee
                 }));
                 x = new EmployeeCardView({
                     model: regularEmployeesCollection.at(regularEmployeesCollection.length - 1)
