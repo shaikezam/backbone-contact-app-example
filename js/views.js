@@ -3,6 +3,9 @@
         initialize: function() {
             this.rendered = true;
         },
+        template: function() {
+            return '<span>Position: <%= position %></span><br><span>Name: <%= name %></span><br><span>ID: <%= id %></span><br>';
+        },
         render: function() {
             this.attachData();
             this.attachPhoto();
@@ -23,9 +26,8 @@
             }
         },
         attachData: function() {
-            this.$el.prepend('<span>' + 'Position: ' + this.model.get('position') + '</span>');
-            this.$el.prepend('<span>' + 'Name: ' + this.model.get('name') + '</span><br>');
-            this.$el.prepend('<span>' + 'ID: ' + this.model.get('id') + '</span><br>');
+            var oTemplate = _.template(this.template());
+            this.$el.prepend(oTemplate(this.model.toJSON()));
         },
         attachPhoto: function() {
             this.$el.prepend('<img class="contact-img" src=' + this.model.get('photo') + ' />')
@@ -36,51 +38,39 @@
     });
 
     let ManagerCardView = CEOCardView.extend({
-        className: 'contact-card',
         initialize: function() {
             CEOCardView.prototype.initialize.apply(this);
         },
+        template: function() {
+          return CEOCardView.prototype.template.apply(this, arguments) + '<span>Manager ID: <%= managerID %></span>';
+        },
         render: function() {
-            this.attachData();
-            this.attachPhoto();
+            CEOCardView.prototype.render.apply(this, arguments);
             this.appendCard();
             return this;
         },
         showHideView: function(bFlag) {
             CEOCardView.prototype.showHideView.call(this, bFlag);
-        },
-        attachData: function() {
-            this.$el.prepend('<br><span>' + 'Manager ID: ' + this.model.get('managerID') + '</span>');
-            CEOCardView.prototype.attachData.apply(this);
-        },
-        attachPhoto: function() {
-            this.$el.prepend('<img class="contact-img" src=' + this.model.get('photo') + ' />');
         },
         appendCard() {
             this.$el.appendTo('#manager-contact-cards');
         }
     });
 
-    let EmployeeCardView = CEOCardView.extend({
-        className: 'contact-card',
+    let EmployeeCardView = ManagerCardView.extend({
         initialize: function() {
-            CEOCardView.prototype.initialize.apply(this);
+            ManagerCardView.prototype.initialize.apply(this);
+        },
+        template: function() {
+          return ManagerCardView.prototype.template.apply(this, arguments);
         },
         render: function() {
-            this.attachData();
-            this.attachPhoto();
+            ManagerCardView.prototype.render.apply(this, arguments);
             this.appendCard();
             return this;
         },
         showHideView: function(bFlag) {
-            CEOCardView.prototype.showHideView.call(this, bFlag);
-        },
-        attachData: function() {
-            this.$el.prepend('<br><span>' + 'Manager ID: ' + this.model.get('managerID') + '</span>');
-            CEOCardView.prototype.attachData.apply(this);
-        },
-        attachPhoto: function() {
-            this.$el.prepend('<img class="contact-img" src=' + this.model.get('photo') + ' />');
+            ManagerCardView.prototype.showHideView.call(this, bFlag);
         },
         appendCard() {
             this.$el.appendTo('#regular-contact-cards');
