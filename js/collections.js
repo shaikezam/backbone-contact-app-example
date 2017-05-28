@@ -1,21 +1,21 @@
-let CEOCollection = Backbone.Collection.extend([{
+let CEOCollection = Backbone.Collection.extend({
     model: ManagerCardModel,
     comparator: function(ceo) {
-        return ceo.get('id');
+        return ceo.get('name');
     }
-}]);
+});
 
-let ManagersCollection = Backbone.Collection.extend([{
+let ManagersCollection = Backbone.Collection.extend({
     model: ManagerCardModel,
     comparator: function(manager) {
-        return manager.get('id');
+        return manager.get('name');
     }
-}]);
+});
 
 
-let RegularEmployeesCollection = Backbone.Collection.extend([{
+let RegularEmployeesCollection = Backbone.Collection.extend({
     model: ManagerCardModel,
     comparator: function(regularEmployee) {
-        return regularEmployee.get('id');
+        return regularEmployee.get('name');
     }
-}]);
+});

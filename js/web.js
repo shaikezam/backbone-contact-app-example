@@ -1,5 +1,6 @@
 $(window).on('load', (() => {
     $.get("./static/data.json", (data) => {
+        $('#about-dialog').modal('show');
         begin(data);
     }).fail((data) => {
         error(data.status + ' ' + data.statusText);
@@ -13,19 +14,22 @@ function begin(data) {
     let managerCollection = new ManagersCollection();
     let regularEmployeesCollection = new RegularEmployeesCollection();
 
-    var aContacts = []
+    let aContacts = [];
+    let x;
+    
     _.each(data['CEO'], function(ceo) {
         ceoCollection.add(new CEOCardModel({
             id: ceo.id,
             name: ceo.name,
             photo: ceo.photo
         }));
-        let x = new CEOCardView({
-            model: ceoCollection.at(0)
+    });
+    ceoCollection.each(function(ceoModel) {
+        x = new CEOCardView({
+            model: ceoModel
         }).render();
         aContacts.push(x);
-    })
-
+    });
     _.each(data['managers'], function(manager) {
         managerCollection.add(new ManagerCardModel({
             id: manager.id,
@@ -33,11 +37,12 @@ function begin(data) {
             managerID: manager.managerID,
             photo: manager.photo
         }));
-        let x = new ManagerCardView({
-            model: managerCollection.at(managerCollection.length - 1)
+    });
+    managerCollection.each(function(managerModel) {
+        x = new ManagerCardView({
+            model: managerModel
         }).render();
         aContacts.push(x);
-
     });
     _.each(data['regularEmployees'], function(regularEmployee) {
         regularEmployeesCollection.add(new EmployeeCardModel({
@@ -46,8 +51,10 @@ function begin(data) {
             managerID: regularEmployee.managerID,
             photo: regularEmployee.photo
         }));
-        let x = new EmployeeCardView({
-            model: regularEmployeesCollection.at(regularEmployeesCollection.length - 1)
+    });
+    regularEmployeesCollection.each(function(regularEmployeeModel) {
+        x = new EmployeeCardView({
+            model: regularEmployeeModel
         }).render();
         aContacts.push(x);
     });
@@ -64,12 +71,76 @@ function begin(data) {
         });
     });
 
+    $('#new-employee-button').click(function(oEvent) {
+        $('#new-employee-anchor').click()
+        let newEmployeeName = $('#new-employee-name').val();
+        $('#new-employee-name').val("");
+        let newEmployeePostion = $('#new-employee-postion').val();
+        $('#new-employee-postion').val("Employee");
+        if (!(newEmployeeName && newEmployeePostion)) {
+            errorHandling.renderError(errorHandling.allFields);
+            return;
+        } else {
+            //errorHandling.removeErrors();
+        }
+        let newEmployee = {
+            name: newEmployeeName,
+            id: aContacts.length + 1,
+            managerID: 'TBD'
+        };
+        let x;
+        switch (newEmployeePostion) {
+            case 'CEO':
+                data['CEO'].push(newEmployee);
+                ceoCollection.add(new CEOCardModel({
+                    id: newEmployee.id,
+                    name: newEmployee.name
+                }));
+                x = new CEOCardView({
+                    model: ceoCollection.at(ceoCollection.length - 1)
+                });
+                break;
+            case 'Manager':
+                data['managers'].push(newEmployee)
+                managerCollection.add(new ManagerCardModel({
+                    id: newEmployee.id,
+                    name: newEmployee.name,
+                    managerID: newEmployee.managerID,
+                    photo: newEmployee.photo
+                }));
+                x = new ManagerCardView({
+                    model: managerCollection.at(managerCollection.length - 1)
+                });
+                break;
+            case 'Employee':
+                regularEmployeesCollection.add(new EmployeeCardModel({
+                    id: newEmployee.id,
+                    name: newEmployee.name,
+                    managerID: newEmployee.managerID,
+                    photo: newEmployee.photo
+                }));
+                x = new EmployeeCardView({
+                    model: regularEmployeesCollection.at(regularEmployeesCollection.length - 1)
+                });
+                break;
+        }
+        x.render();
+        aContacts.push(x);
+    });
+
 };
 
-function error(message) {
-    new window.ErrorMessageView({
-        model: new window.ErrorMessageModel({
-            message: message
-        })
-    }).render();
-}
+var errorHandling = {
+    aErrors: [],
+    allFields: "Please fill all fields",
+    renderError: function(message) {
+        this.aErrors.push(new window.ErrorMessageView({
+            model: new window.ErrorMessageModel({
+                message: message
+            })
+        }).render());
+    },
+    removeErrors: function() {
+        this.aErrors[0].remove();
+    }
+};

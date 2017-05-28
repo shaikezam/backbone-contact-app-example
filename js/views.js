@@ -2,6 +2,8 @@
         className: 'contact-card',
         initialize: function() {
             this.rendered = true;
+            _.bindAll(this, "render");
+            this.model.bind('change', this.render);
         },
         template: function() {
             return '<span>Position: <%= position %></span><br><span>Name: <%= name %></span><br><span>ID: <%= id %></span><br>';
@@ -11,6 +13,9 @@
             this.attachPhoto();
             this.appendCard();
             return this;
+        },
+        events: {
+            'click': 'showDetails'
         },
         showHideView: function(bFlag) {
             if (bFlag) {
@@ -27,30 +32,32 @@
         },
         attachData: function() {
             var oTemplate = _.template(this.template());
-            this.$el.prepend(oTemplate(this.model.toJSON()));
+            this.$el.html(oTemplate(this.model.toJSON()));
         },
         attachPhoto: function() {
             this.$el.prepend('<img class="contact-img" src=' + this.model.get('photo') + ' />')
         },
         appendCard() {
             this.$el.appendTo('#ceo-contact-card');
+        },
+        showDetails: function() {
+            $('#updated-employee-id').val(this.model.get('id'));
+            $('#updated-employee-name').val(this.model.get('name'));
+            $('#updated-employee-position').val(this.model.get('position'));
+            $('#update-employee-modal').modal('show');
+            $('#submit-update-employee').click(function(oEvent) {
+                let updatedName = $('#updated-employee-name').val();
+                this.updateEmployee(updatedName, oEvent);
+            }.bind(this));
+        },
+        updateEmployee: function(updatedName, oEvent) {
+            this.model.set({'name': updatedName});
         }
     });
 
     let ManagerCardView = CEOCardView.extend({
-        initialize: function() {
-            CEOCardView.prototype.initialize.apply(this);
-        },
         template: function() {
-          return CEOCardView.prototype.template.apply(this, arguments) + '<span>Manager ID: <%= managerID %></span>';
-        },
-        render: function() {
-            CEOCardView.prototype.render.apply(this, arguments);
-            this.appendCard();
-            return this;
-        },
-        showHideView: function(bFlag) {
-            CEOCardView.prototype.showHideView.call(this, bFlag);
+            return CEOCardView.prototype.template.apply(this, arguments) + '<span>Manager ID: <%= managerID %></span>';
         },
         appendCard() {
             this.$el.appendTo('#manager-contact-cards');
@@ -58,20 +65,6 @@
     });
 
     let EmployeeCardView = ManagerCardView.extend({
-        initialize: function() {
-            ManagerCardView.prototype.initialize.apply(this);
-        },
-        template: function() {
-          return ManagerCardView.prototype.template.apply(this, arguments);
-        },
-        render: function() {
-            ManagerCardView.prototype.render.apply(this, arguments);
-            this.appendCard();
-            return this;
-        },
-        showHideView: function(bFlag) {
-            ManagerCardView.prototype.showHideView.call(this, bFlag);
-        },
         appendCard() {
             this.$el.appendTo('#regular-contact-cards');
         }

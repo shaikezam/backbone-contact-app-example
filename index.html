@@ -30,12 +30,9 @@
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <a class="navbar-brand anchor" href="https://www.w3schools.com">New Employee</a>
-                <a class="navbar-brand anchor" href="https://www.w3schools.com">Update Employee</a>
-                <a class="navbar-brand anchor" href="https://www.w3schools.com">About</a>
-                <div class="col-sm-3 col-md-3">
-                </div>
+                <a id="new-employee-anchor" class="navbar-brand anchor" data-toggle="collapse" data-target="#new-employee">New Employee</a>
                 <ul class="nav navbar-nav navbar-right">
+                    <a class="navbar-brand anchor" data-toggle="modal" data-target="#about-dialog">About</a>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Go to...<span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -54,19 +51,86 @@
                 </ul>
             </div>
     </nav>
+    <div id="error-messages"></div>
+    <div id="new-employee" class="collapse">
+        <h3>Add new employee</h3>
+        <div class="form-group">
+            <label for="email">Name:</label>
+            <input type="text" class="form-control" id="new-employee-name" placeholder="Enter new employee name" name="email">
+            <label for="email">Position:</label>
+            <select class="form-control" id="new-employee-postion">
+                <option>CEO</option>
+                <option>Manager</option>
+                <option selected>Employee</option>
+            </select>
+            <br>
+            <button type="submit" class="btn btn-default" id="new-employee-button">
+                <i class="icon-user icon-white"></i> Submit
+            </button>
+        </div>
+    </div>
+    <h3>Search for employee</h3>
     <div class="input-group">
         <input id="search-employees" type="text" class="form-control" placeholder="Search employee by name">
         <div class="input-group-btn">
             <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
         </div>
     </div>
+
+
     <div id="ceo-contact-card">
-        <h3 >CEO</h3></div>
+        <h3>CEO</h3></div>
     <div id="manager-contact-cards">
         <h3>Managers</h3></div>
     <div id="regular-contact-cards">
         <h3>Employees</h3></div>
-    <div id="error-messages"></div>
+    <div class="modal fade" id="update-employee-modal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Update employee details</h4>
+                </div>
+                <div class="modal-body">
+                    <label>Employee ID:</label>
+                    <input type="text" class="form-control" id="updated-employee-id" disabled>
+                    <label>Name:</label>
+                    <input type="text" class="form-control" id="updated-employee-name">
+                    <label>Postion:</label>
+                    <select class="form-control" id="updated-employee-position" disabled>
+                        <option>CEO</option>
+                        <option>Manager</option>
+                        <option selected>Employee</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button id="cancel-update-employee" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button id="submit-update-employee" type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="about-dialog" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><b>My backbone application</b></h4>
+                </div>
+                <div class="modal-body">
+                    Hi guys,<br>
+                    This is a cool <b>backbone</b> based application.<br>
+                    Just a simple contact information system.<br>
+                    You can search for employees, add new contacts and upated exists (based on mock data, there isn't DB avaiable).<br>
+                    Check out my Linkdin and github repo from the drop down in right.<br>
+                    Have fun and stay awesome:)<br>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

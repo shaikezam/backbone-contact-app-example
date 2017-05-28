@@ -8,7 +8,9 @@ body {
     font-family: "consolas", Georgia, Serif;
     font-size: medium;
 }
-
+.modal-dialog {
+    color: black;
+}
 .navbar-default {
     border-style: solid;
     border-color: black;
@@ -33,9 +35,14 @@ body {
 
 .anchor:hover {
     text-decoration: underline;
+    cursor: pointer;
+    cursor: hand;
 }
 
-.form-control {}
+#new-employee {
+    margin-left: 1%;
+    width: 20%;
+}
 
 #default-contact {
     width: 10%;
