@@ -45,12 +45,13 @@
             $('#updated-employee-name').val(this.model.get('name'));
             $('#updated-employee-position').val(this.model.get('position'));
             $('#update-employee-modal').modal('show');
-            $('#submit-update-employee').click(function(oEvent) {
+            $('#submit-update-employee').on('click', function(oEvent) {
                 let updatedName = $('#updated-employee-name').val();
                 this.updateEmployee(updatedName, oEvent);
             }.bind(this));
         },
         updateEmployee: function(updatedName, oEvent) {
+            $('#submit-update-employee').off('click');
             this.model.set({'name': updatedName});
         }
     });
