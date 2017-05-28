@@ -59,7 +59,7 @@
             "id": "12",
             "name": "Jim Coral",
             "photo": "./assets/male5.jpg",
-            "managerID": "4"
+            "managerID": "2"
         }, {
             "id": "13",
             "name": "Ann Cyan",
@@ -74,7 +74,7 @@
             "id": "15",
             "name": "Burton Rich",
             "photo": "./assets/male4.jpg",
-            "managerID": "4"
+            "managerID": "3"
         }, {
             "id": "16",
             "name": "Aaron Grant",
@@ -89,7 +89,7 @@
             "id": "18",
             "name": "Chadwick Stokes",
             "photo": "./assets/contact.svg",
-            "managerID": "4"
+            "managerID": "2"
         }, {
             "id": "19",
             "name": "Josiah Watts",
@@ -99,12 +99,12 @@
             "id": "20",
             "name": "Ira Shepard",
             "photo": "./assets/female6.jpg",
-            "managerID": "4"
+            "managerID": "3"
         }, {
             "id": "21",
             "name": "Garrett Castaneda",
             "photo": "./assets/male7.jpg",
-            "managerID": "4"
+            "managerID": "3"
         }, {
             "id": "00022",
             "name": "Garrett Ball",
@@ -114,17 +114,17 @@
             "id": "23",
             "name": "Kelly Noble",
             "photo": "./assets/female7.jpg",
-            "managerID": "4"
+            "managerID": "2"
         }, {
             "id": "24",
             "name": "Reece Mcknight",
             "photo": "./assets/female8.jpg",
-            "managerID": "4"
+            "managerID": "2"
         }, {
             "id": "25",
             "name": "Thor Mcmahon",
             "photo": "./assets/male8.jpg",
-            "managerID": "4"
+            "managerID": "3"
         }, {
             "id": "26",
             "name": "Brennan Frederick",
@@ -134,11 +134,11 @@
             "id": "27",
             "name": "Kennedy Foley",
             "photo": "./assets/female9.jpg",
-            "managerID": "4"
+            "managerID": "2"
         }, {
             "id": "28",
             "name": "Clarke Reyes",
             "photo": "./assets/male9.jpg",
-            "managerID": "4"
+            "managerID": "3"
         }]
     }
