@@ -6,34 +6,21 @@ window.ErrorMessageModel = Backbone.Model.extend({
 
 window.ErrorMessageView = Backbone.View.extend({
     el: '#error-messages',
-    render: function() {
-        this.$el.addClass('alert alert-danger');
-        this.$el.html(this.model.get('message'));
-        return this;
-    }
-});
-
-window.UpdateEmployeeModel = Backbone.Model.extend({
-    defaults: {
-        id: '',
-        name: '',
-        position: ''
-    }
-});
-
-window.UpdateEmployeeView = Backbone.View.extend({
-    el: '#update-employee-modal',
-    render: function() {
-        $('#updated-employee-id').val(this.model.get('id'));
-        $('#updated-employee-name').val(this.model.get('name'));
-        $('#updated-employee-postion').val(this.model.get('position'));
-        $('#update-employee-modal').modal('show');
-        return this;
-    },
     events: {
-        'click #submit-update-employee': 'submit'
+        'remove': 'removeViewFromArray'
     },
-    submit: function() {
-        
+    template: function() {
+        return '<div class="alert alert-danger"><%= message %><a href="#" class="close" data-dismiss="alert" aria-label="close">x</a></div>';
+    },
+    render: function() {
+        //this.$el.addClass('alert alert-danger');
+        var oTemplate = _.template(this.template());
+        this.$el.prepend(oTemplate(this.model.toJSON()));
+        return this;
+    },
+    removeViewFromArray: function() {
+        console.log("LoL");
     }
 });
+
+window.errorViews = []

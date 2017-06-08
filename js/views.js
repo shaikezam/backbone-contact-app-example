@@ -54,7 +54,10 @@
         },
         updateEmployee: function(updatedName, updatedEmail, oEvent) {
             $('#submit-update-employee').off('click');
-            this.model.set({'name': updatedName, 'email': updatedEmail});
+            let responseFromValidate = this.model.set({'name': updatedName, 'email': updatedEmail}, {validate: true});
+            if (!responseFromValidate) {
+                return false;
+            }
         }
     });
 
